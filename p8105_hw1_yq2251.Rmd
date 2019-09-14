@@ -32,6 +32,23 @@ mean(pull(hw1_df, vec_char))
 mean(pull(hw1_df, vec_factor))
 #the numeric and logical vectors have the mean, the others don't.
 
+##write a chunk to convert logical, character, and factor variables into numeric
+```{r}
+as.numeric(pull(hw1_df, vec_logical))
+as.numeric(pull(hw1_df, vec_char))
+as.numeric(pull(hw1_df, vec_factor))
+```
+#According to the output,logical vector can be converted to numeric vector with "true" or "false" replaced by "1" and "0".
+#Both character and factor vectors failed to be converted to numeric vector with a "NA" result.
+#Mean function is specifically for numeric values, thie explained why only numeric and logical vectors have the mean
+
+#write a second chunk to convert logical vector with extra sample calculation
+```{r}
+pull(hw1_df, vec_numeric)*as.numeric(pull(hw1_df, vec_logical))
+pull(hw1_df, vec_numeric)*as.factor(pull(hw1_df, vec_logical))
+as.numeric(as.factor(pull(hw1_df, vec_logical)))*pull(hw1_df, vec_numeric)
+```
+
 
 
 
