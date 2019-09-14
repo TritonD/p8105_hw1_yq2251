@@ -13,3 +13,25 @@ knitr::opts_chunk$set(echo = TRUE)
 
 This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
+##load package
+library(tidyverse)
+
+##Question 1
+## create data frame
+hw1_df=tibble(
+   vec_numeric=rnorm(n=8, mean=0, sd=1),
+   vec_logical=c(x>0),
+   vec_char=character(length=8),
+   vec_factor=factor(vec_char, levels = c("a", "b", "c"))
+)
+
+#take mean of each variable
+mean(pull(hw1_df, vec_numeric))
+mean(pull(hw1_df, vec_logical))
+mean(pull(hw1_df, vec_char))
+mean(pull(hw1_df, vec_factor))
+#the numeric and logical vectors have the mean, the others don't.
+
+
+
+
