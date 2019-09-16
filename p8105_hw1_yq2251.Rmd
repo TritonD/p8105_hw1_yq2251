@@ -18,9 +18,9 @@ library(tidyverse)
 
 hw1_df=tibble(
    vec_numeric=rnorm(n=8, mean=0, sd=1),
-   vec_logical=c(vec_numeric>0),
-   vec_char=character(length=8),
-   vec_factor=factor(vec_char, levels = c("a", "b", "c"))
+   vec_logical=vec_numeric>0,
+   vec_char=c("This", "is", "my", "first", "class", "using", "R", "code"),
+   vec_factor=factor(c( "a","a","b","b","c","c","c","c"))
 )
 ```
 
